@@ -4,16 +4,18 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- none
 
-pool:
-  vmImage: ubuntu-latest
+stages:
+  jobs:
+    - job: TerraformCode
+  pool:
+    vmImage: 'ubuntu-latest'
+    steps:
+    -  checkout: self
+    -  script: ls $(System.DefaultWorkingDirectory)
+    -  script: sudo apt-get -y install zip
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  steps:
+  - script: echo Hello, world!
+    displayName: 'Run a one-line script'
