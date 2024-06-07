@@ -16,7 +16,6 @@ stages:
     -  checkout: self
     -  script: ls $(System.DefaultWorkingDirectory)
     -  script: sudo apt-get -y install zip
-
       steps:
       - script: echo Hello, world!
         displayName: 'Run a one-line script'
