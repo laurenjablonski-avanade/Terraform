@@ -7,8 +7,9 @@ trigger:
 - none
 
 stages:
+- stage : Build
   jobs:
-    - job: TerraformCode
+  - job: TerraformCode
   pool:
     vmImage: 'ubuntu-latest'
     steps:
